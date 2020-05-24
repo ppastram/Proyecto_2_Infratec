@@ -1,8 +1,8 @@
 /*
 PROYECTO 1 FUNDAMENTOS DE INFRAESTRUCTURA TECNOLOGICA - 202020
-Integrante 1 - Codigo integrante 1
-Integrante 2 - Codigo integrante 2
-Integrante 3 - Codigo integrante 3
+Juan Pablo Garzón - 201912575
+Pablo Pastrana - 201822920
+Juan Andrés Santiago - 201821950
 */
 
 #define _CRT_SECURE_NO_DEPRECATE

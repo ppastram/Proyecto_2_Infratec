@@ -1,8 +1,10 @@
 /*
 PROYECTO 1 FUNDAMENTOS DE INFRAESTRUCTURA TECNOLOGICA - 202020
-Integrante 1 - Codigo integrante 1
-Integrante 2 - Codigo integrante 2
-Integrante 3 - Codigo integrante 3
+Juan Pablo Garzón - 201912575
+Pablo Pastrana V.. - 201822920
+Juan Andrés Santiago - 201821950
+
+Ideas para el código fueron tomadas de cssimplified.com
 */
 
 #define _CRT_SECURE_NO_DEPRECATE
@@ -85,9 +87,33 @@ void writeFile(Datos * archivoEnOctal, char *nombreArchivo)
 void convertirABinario(Datos * datosOct, Datos * datosBin)
 {
 	// TODO: Esta funciÃ³n se debe realizar completamente en ensamblador dentro de la etiqueta __asm.
-    // SE PUEDEN USAR VARIABLES SIMBÃ“LICAS (no es obligatorio acceder a las variables por pila). 
-    __asm {
+    // SE PUEDEN USAR VARIABLES SIMBÃ“LICAS (no es obligatorio acceder a las variables por pila).
+    __asm
+		{
+			NUM DW 1234H
+			MOV AX, datosOct
+			LEA SI,RES
+			LEA DX,RES
 
+			MOV CX,0
+			MOV BX,10
+
+			WHILE1: MOV DX,0
+		    DIV BX
+		    ADD DL,30H
+		    PUSH DX
+		    INC CX
+		    CMP AX,7
+		    JG WHILE1
+
+		    ADD AL,30H
+		    MOV [SI],AL
+
+			WHILE2: POP AX
+        INC SI
+        MOV [SI],AL
+        LOOP WHILE2
+        RET
     }
 }
 
